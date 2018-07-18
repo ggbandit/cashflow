@@ -1,0 +1,23 @@
+.card:hover {
+	box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.15), 0 6px 13px 0 rgba(0, 0, 0, 0.19);
+  	transform:scale(1.02);
+  	color: #3e4b5b;
+}
+
+.card {
+	transition: all 0.4s ease-out;
+	color: #3e4b5b;
+}
+
+.card-title {
+	border: 1px solid
+}
+
+.card-header {
+	background-color: white;
+	color: #097cff;
+}
+
+.close {
+	font-size: 2rem;
+}
