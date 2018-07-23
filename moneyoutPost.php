@@ -1,17 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "synerry_cash";
-$password = "itoL2oAZ7";
-$dbname = "synerry_cash";
-
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-} 
+include("inc/config.php");
   $number = count($_POST["list"]);
   $list = array_filter($_POST["list"]);
   $balance = array_filter($_POST["balance"]);

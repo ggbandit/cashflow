@@ -1,32 +1,27 @@
 <?php
-$servername = "localhost";
-$username = "synerry_cash";
-$password = "itoL2oAZ7";
-$dbname = "synerry_cash";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-} 
-  $number = count($_POST["list"]);
-  $list = array_filter($_POST["list"]);
-  $balance = array_filter($_POST["balance"]);
+include("inc/config.php");
+ // echo "รายรับ"; exit;
+// print_r($_POST); exit;
+  $balance = ($_POST["balance"]);
   $inputDate = strtotime($_POST["datepicker"]);
-  
-  if(!empty($list) && !empty($balance) && !empty($inputDate)) {
-      for($i=0; $i<$number; $i++)
-      {
-          if (!empty($list[$i]) && !empty($balance[$i])) {
-            $sql =  $conn->query("INSERT INTO income (list, inputDate, balance)
-              VALUES ('$list[$i]','$inputDate','$balance[$i]')");
+  $countInsert = array();
+  if(count($_POST["list"])  && !empty($inputDate)) {
+    if(count($_POST["list"])) {
+      foreach ($_POST["list"] as $i => $value) {
+          if (!empty($_POST["list"][$i]) && !empty($balance[$i])) {
+            echo $sql = "INSERT INTO income (list, inputDate, balance)
+              VALUES ('$value','$inputDate','$balance[$i]')";
+            echo $insertID =  $conn->query($sql);
+            $countInsert[] = $insertID;
           }           
+      } 
+      if(count($countInsert)) {
+        echo "Insert success!";
+      } else {
+        echo "error insert";
       }
-        exit('Insert success!'); 
-      }
-   else if (empty($inputDate)) {
+    }
+  }else if (empty($inputDate)) {
       echo "โปรดเลือกวันที่";
   }
 

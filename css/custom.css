@@ -21,3 +21,72 @@
 .close {
 	font-size: 2rem;
 }
+
+.navbar {
+  background-color: #3964a3;
+  color: white;
+  padding-bottom: 1.5% 0;
+}
+
+a.nav-link{
+	font-size: 1.5rem;
+	color: white;
+}
+
+a.nav-link.active, a.nav-link:hover {
+	color: #343a40;
+}
+
+@media (min-width:225px) {
+	.margin {
+		margin-top: 10px;
+	}
+
+}
+@media (min-width:576px) {
+	.margin {
+		margin-top: 10px;
+	}
+
+}
+@media (min-width:768px) {
+
+		.margin {
+		margin-top: 10px;
+	}
+	.h1 {
+		font-size: 30px;
+	}
+	.h4 {
+		font-size: 25px;
+	}
+	.modal-dialog {
+    max-width: 500px;	
+  }
+}
+@media (min-width:992px) {
+	.margin {
+		margin-top: 0px;
+	}
+
+}
+@media (min-width:1200px) {
+	.card-body {
+		margin-top: 20px;
+	}
+}
+
+@media (min-width:1440px) {
+	
+	.card-body {
+		margin-top: 15px;
+	}
+	.h1 {
+		font-size: 35px;
+	}
+	.h4 {
+		font-size: 30px;
+	}
+
+
+}
