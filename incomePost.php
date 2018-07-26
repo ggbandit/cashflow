@@ -9,9 +9,9 @@ include("inc/config.php");
     if(count($_POST["list"])) {
       foreach ($_POST["list"] as $i => $value) {
           if (!empty($_POST["list"][$i]) && !empty($balance[$i])) {
-            echo $sql = "INSERT INTO income (list, inputDate, balance)
+            $sql = "INSERT INTO income (list, inputDate, balance)
               VALUES ('$value','$inputDate','$balance[$i]')";
-            echo $insertID =  $conn->query($sql);
+            $insertID =  $conn->query($sql);
             $countInsert[] = $insertID;
           }           
       } 
