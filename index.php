@@ -1,3 +1,4 @@
+<?php include('registration/server.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
