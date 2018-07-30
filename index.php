@@ -151,7 +151,7 @@
           </thead>
           <tbody>
             <?php
-            $conn = mysqli_connect("localhost","synerry_cash","itoL2oAZ7","synerry_cash");
+            $conn = mysqli_connect("localhost","root","chanpreecha1!","cashflow");
               if ($conn-> connect_error) {
                 die("Connection failed:".$conn-> connect_error);
             }
@@ -220,7 +220,7 @@
             <tr class="table-active">
               <th class="text-center">รวมรายรับ</th>
               <?php
-              $conn = mysqli_connect("localhost","synerry_cash","itoL2oAZ7","synerry_cash");
+              $conn = mysqli_connect("localhost","root","chanpreecha1!","cashflow");
               if ($conn-> connect_error) {
                 die("Connection failed:".$conn-> connect_error);
               }
@@ -330,7 +330,7 @@
           </thead>
           <tbody>
             <?php
-            $conn = mysqli_connect("localhost","synerry_cash","itoL2oAZ7","synerry_cash");
+            $conn = mysqli_connect("localhost","root","chanpreecha1!","cashflow");
               if ($conn-> connect_error) {
                 die("Connection failed:".$conn-> connect_error);
               }
@@ -399,7 +399,7 @@
             <tr class="table-active">
               <th class="text-center">รวมรายจ่าย</th>
               <?php
-              $conn = mysqli_connect("localhost","synerry_cash","itoL2oAZ7","synerry_cash");
+              $conn = mysqli_connect("localhost","root","chanpreecha1!","cashflow");
               if ($conn-> connect_error) {
                 die("Connection failed:".$conn-> connect_error);
               }
@@ -493,7 +493,7 @@
             <tr class="bg-dark" style="color:white;">
               <th class="text-center">เงินคงเหลือ</th>
               <?php 
-              $conn = mysqli_connect("localhost","synerry_cash","itoL2oAZ7","synerry_cash");
+              $conn = mysqli_connect("localhost","root","chanpreecha1!","cashflow");
               if ($conn-> connect_error) {
                 die("Connection failed:".$conn-> connect_error);
               }

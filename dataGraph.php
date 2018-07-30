@@ -4,9 +4,9 @@ header('Content-Type: application/json');
 
 //setting database
 $servername = "localhost";
-$username = "synerry_cash";
-$password = "itoL2oAZ7";
-$dbname = "synerry_cash";
+$username = "root";
+$password = "chanpreecha1!";
+$dbname = "cashflow";
 
 
 //get connection

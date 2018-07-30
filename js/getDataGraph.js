@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "/cash-flow/dataGraph.php",
+        url: "/cashflow/dataGraph.php",
         method: "GET",
         success: function(data) {
             var totalPerMonth = [];
@@ -86,7 +86,7 @@ $(document).ready(function() {
             };
 
             var weekCashflow = {
-                labels: ["Week1", "Week2", "Week3", "Week4"],
+                labels: ["Week1(01-07)", "Week2(08-14)", "Week3(15-21)", "Week4(22-31)"],
                 datasets: [incomeChartWeekData, moneyoutChartWeekData]
             };
             var chartOptions = {
