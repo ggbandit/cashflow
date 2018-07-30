@@ -18,6 +18,8 @@
 
         if (!empty($val["username"])) {
             array_push($errors, "This username has been already used");
+        } else if ($password_1 != $password_2) {
+            array_push($errors, "The two passwords do not match");
         }
         if (empty($username)) {
             array_push($errors, "Username is required");
@@ -27,9 +29,6 @@
         }
         if (empty($password_1)) {
             array_push($errors, "Password is required");
-        }
-        if ($password_1 != $password_2) {
-            array_push($errors, "The two passwords do not match");
         }
 
         if (count($errors) == 0) {

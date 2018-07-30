@@ -29,12 +29,8 @@
                     <input type="submit" name="login" value="Login">
                 </div>
                 <div class="mt-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="register.php">Sign up</a></li>
-                        <li class="breadcrumb-item"><a href="#">Forget password</a></li>
-                    </ol>
-                </nav>
+                    <label class="pr-2" style="color: white;">not yet a member |</labe>
+                    <a href="register.php">Sign up</a>
                 </div>
             </form>
         </div>
