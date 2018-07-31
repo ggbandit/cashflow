@@ -1,4 +1,9 @@
-<?php include('registration/server.php'); ?>
+<?php include('registration/server.php'); 
+  if (empty($_SESSION['username'])) {
+    header('location:../cashflow/registration/login.php');
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -38,6 +43,7 @@
   <script src="js/getDataGraph.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <title>Cash Flow Synerry</title>
 </head>
@@ -45,7 +51,7 @@
 <body>
   <!-- <body data-spy="scroll" data-target=".navbar" data-offset="50"> -->
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-md fixed-top" id="spnTop">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light" id="spnTop">
     <div class="container-fluid">
       <a class="logo">Cash Flow</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -53,19 +59,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link ภาพรวม" href=".ภาพรวม">ภาพรวม</a>
+          <li class="mr-4 pt-2"><a class="icon" href="#"><i class="fa fa-home"></i>  Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#รายรับ">รายรับ</a>
+          <li class="mr-4 pt-2"><a class="icon" href="#"><i class="fa fa-long-arrow-up"></i> Money In</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#รายจ่าย">รายจ่าย</a>
+          <li class="mr-4 pt-2"><a class="icon" href="#"><i class="fa fa-long-arrow-down"></i> Money Out</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#รายงาน" >รายงาน</a>
-          </li>
-        </ul>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user"></i> Login <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#"><i class="fa fa-user fa-fw"></i> 
+                      <?php if (isset($_SESSION["username"])): ?>
+                      <?php echo $_SESSION["username"]; ?>
+                      <?php endif ?>
+                    </a>
+                </li>
+                <li><a href="index.php?logout='1'"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+          </li> 
       </div>
     </div>
   </nav>
