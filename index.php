@@ -59,11 +59,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="mr-4 pt-2"><a class="icon" href="#"><i class="fa fa-home"></i>  Home</a>
+          <li class="mr-3 pt-2"><a class="icon" href="#home"><i class="fa fa-home"></i>  Home</a>
           </li>
-          <li class="mr-4 pt-2"><a class="icon" href="#"><i class="fa fa-long-arrow-up"></i> Money In</a>
+          <li class="mr-3 pt-2"><a class="icon" href="#moneyin"><i class="fa fa-long-arrow-up"></i> Money In</a>
           </li>
-          <li class="mr-4 pt-2"><a class="icon" href="#"><i class="fa fa-long-arrow-down"></i> Money Out</a>
+          <li class="mr-3 pt-2"><a class="icon" href="#moneyout"><i class="fa fa-long-arrow-down"></i> Money Out</a>
           </li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -76,6 +76,7 @@
                       <?php endif ?>
                     </a>
                 </li>
+                <li class="border-bottom1"></li>
                 <li><a href="index.php?logout='1'"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
@@ -85,6 +86,7 @@
   </nav>
   <!-- Graph -->
   <div class="container-fluid bg1">
+    <section id="home">
     <div class="row pt-4">
       <div class="col-sm-12 col-md-12 col-lg-9">
         <div class="form-control h-100 padding" id="chart-container" style="background-color: white;">
@@ -134,10 +136,12 @@
         </div>
       </div>
     </div>
+  </section>
     <!-- Graph -->
     <!-- button -->
     
     <!-- The Modal -->
+    <section id="moneyin">
     <div class="row no-gutters mt-3">
       <div class="col-md-12 form-control p-1 " id="รายรับ" style="background-color: white;"><div class="table-responsive">
         <table class="display table table-striped table-sm"  style="width:100%">
@@ -669,6 +673,7 @@
         </table>
       </div></div>
     </div>
+    </section>
     <div class="modal fade" id="myModal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -742,20 +747,39 @@
 </script>
 <!-- table รายรับ-รายจ่าย -->
 <script>
-  $("a[href^='.ภาพรวม']").click(function(e) {
-    e.preventDefault();
-    var position = $($(this).attr("href")).offset().top;
-    $("body, html").animate({
-      scrollTop: 0
-    } /* speed */ ,500);
+  $(document).ready(function() {
+  var sections = $('section')
+  var nav = $('nav'); 
+  var nav_height = nav.outerHeight();
+
+  $(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
+    
+    sections.each(function() {
+      var top = $(this).offset().top - nav_height,
+          bottom = top + $(this).outerHeight();
+      
+      if (cur_pos >= top && cur_pos <= bottom) {
+        nav.find('a').removeClass('active');
+        sections.removeClass('active');
+        
+        $(this).addClass('active');
+        nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+      }
+    });
   });
-  $("a[href^='#']").click(function(e) {
-    e.preventDefault();
-    var position = $($(this).attr("href")).offset().top;
-    $("body, html").animate({
-      scrollTop: position
-    } /* speed */ ,600);
+
+  nav.find('a').on('click', function () {
+    var $el = $(this)
+      , id = $el.attr('href');
+    
+    $('html, body').animate({
+      scrollTop: $(id).offset().top - nav_height
+    }, 500);
+    
+    return false;
   });
+});
 </script>
 
 <!-- select option show graph and data -->
